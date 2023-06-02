@@ -1,4 +1,4 @@
-# Discord_LinuxGSM_interface | Control your LinuxGSM server from Discord
+# dc_lgsm_interface | Control your LinuxGSM server from Discord
 
 A Discord bot that let's you start, stop, restart etc. a LinuxGSM server. It's basically just a way to access the LinuxGSM (Linux Game Server Managers) scripts trough Discord.
 
@@ -11,8 +11,8 @@ _NOTE! Make sure you're doing this as the user with the LinuxGSM installation.
 
 1 Start by cloning the repository and installing the packages
 ```
-git clone https://github.com/King007t/Discord_LinuxGSM_interface.git
-cd Discord_LinuxGSM_interface
+git clone https://github.com/King007t/dc_lgsm_interface.git
+cd dc_lgsm_interface
 npm install
 ```
 2 to be able to connect to a Discord server you will need a bot token.
@@ -34,21 +34,21 @@ Your config file (config.json) will look something like this:
 }
 ```
 
-3 Start the bot by running the following command within the Discord_LinuxGSM_interface directory
+3 Start the bot by running the following command within the dc_lgsm_interface directory
 ```
 node bot.js
 ```
 **OR** Make the bot run in the background and on sytem startup by creating a sytemd service
 
-Step 1: Create a new systemd service for Discord_LinuxGSM_interface
+Step 1: Create a new systemd service for dc_lgsm_interface
 ```
-sudo nano /lib/systemd/system/Discord_LinuxGSM_interface.service 
+sudo nano /lib/systemd/system/dc_lgsm_interface.service 
 ```
 
 Step 2: Paste the following content and replace User and Group with your own username
 ```
 [Unit]
-Description=Discord_LinuxGSM_interface
+Description=dc_lgsm_interface
 [Service]
 Type=simple
 Restart=on-failure
@@ -57,7 +57,7 @@ StartLimitInterval=60s
 StartLimitBurst=3
 User=[username]
 Group=[username]
-ExecStart=node /home/[username]/Discord_LinuxGSM_interface/
+ExecStart=node /home/[username]/dc_lgsm_interface/
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 [Install]
@@ -66,9 +66,9 @@ WantedBy=multi-user.target
 
 Step 3: Press Ctrl + x,y (to save), Enter (to save with the same name)
 
-Step 4: Enable the new Discord_LinuxGSM_interface service (optional but will make the bot start on boot)
+Step 4: Enable the new dc_lgsm_interface service (optional but will make the bot start on boot)
 ```
-sudo systemctl enable Discord_LinuxGSM_interface.service
+sudo systemctl enable dc_lgsm_interface.service
 ```
 
 Step 5: Reload the Systemd Daemon (Do this every time you modify a server file)
@@ -76,9 +76,9 @@ Step 5: Reload the Systemd Daemon (Do this every time you modify a server file)
 sudo systemctl daemon-reload
 ```
 
-Step 6: start the Discord_LinuxGSM_interface service. You can use start, stop, restart or status. You don't have to run it manually again if it's enabled to start on boot (Step 4).
+Step 6: start the dc_lgsm_interface service. You can use start, stop, restart or status. You don't have to run it manually again if it's enabled to start on boot (Step 4).
 ```
-sudo systemctl start Discord_LinuxGSM_interface.service
+sudo systemctl start dc_lgsm_interface.service
 ```
 
 ## Available commands
