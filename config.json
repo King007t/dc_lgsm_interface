@@ -1,9 +1,12 @@
 {
-   "server_name": "My Valheim Server",
-   "prefix": "!",
-   "token": "a_long_string_with_rand0m_characters",
-   "required_role": {
-      "use": true,
-      "name": "trusted"
-   }
+	"server_name": "MyServer",
+	"serverpath": "/home/[user]/arkserver",
+	"msgsec": "5",
+	"prefix": "!",
+	"token": "random_characters",
+	"channel" :"420809790730742385",
+	"required_role" : {
+		"use": true,
+		"name": "ServerManager"
+	}
 }

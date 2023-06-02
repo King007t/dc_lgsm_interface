@@ -7,7 +7,7 @@ const client = new Client();
 
 client.commands = new Collection();
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(__dirname + '/commands/').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
    const command = require(`./commands/${file}`);
@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 }
 
 // Load event files
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+const eventFiles = fs.readdirSync(__dirname + '/events/').filter(file => file.endsWith('.js'));
 
 // Handle events depending on their method (once, on)
 for (const file of eventFiles) {

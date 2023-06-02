@@ -1,8 +1,8 @@
-const { server_name } = require('../config.json');
+const { server_name, msgsec } = require('../config.json');
 
 module.exports = {
    name: 'info',
-   description: 'Prints info about the Valheim server',
+   description: 'Prints info about the LinuxGSM server',
    execute(message, args) {
       message.channel.send({
          embed: {
@@ -15,6 +15,8 @@ module.exports = {
                { name: "Uptime", value: "10hours 43minutes"}
             ]
          }
-      });
+      }).then(msg => {
+               setTimeout(() => msg.delete(), msgsec * 1000);
+            });
    },
 };
