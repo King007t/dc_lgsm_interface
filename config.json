@@ -4,8 +4,8 @@
 	"msgsec": "5",
 	"prefix": "!",
 	"token": "random_characters",
-	"channel" :"",
-	"required_role" : {
+	"channel":"",
+	"required_role": {
 		"use": true,
 		"name": "ServerManager"
 	}
