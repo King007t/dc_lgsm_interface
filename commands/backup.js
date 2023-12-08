@@ -6,6 +6,12 @@ module.exports = {
 	name: 'backup',
 	description: 'Backs up the LinuxGSM server',
 	execute(message, args) {
+		config.locked = true;
+      
+		fs.writeFile(__dirname.replace('commands', '') + "config.json", JSON.stringify(config), function writeJSON(err) {
+    			if (err) return console.log(err);
+    		});
+
 		message.channel.send("Backing up the server! :package:").then(msg => {
 			setTimeout(() => msg.delete(), config.msgsec * 1000);
 		});
@@ -29,7 +35,7 @@ module.exports = {
 		script.on('exit', function() {
 			config.locked = false;
       
-			fs.writeFile(__dirname.replace('events', '') + "config.json", JSON.stringify(config), function writeJSON(err) {
+			fs.writeFile(__dirname.replace('commands', '') + "config.json", JSON.stringify(config), function writeJSON(err) {
     				if (err) return console.log(err);
     			});
 		
