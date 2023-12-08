@@ -12,15 +12,27 @@ module.exports = {
             });
          return;
       }
-   
+      
+      const { locked } = require("../config.json");
+      
+      if (locked) 
+         message.reply(`Please wait for the previous command to execute! :warning:`).then(msg => {
+            setTimeout(() => msg.delete(), msgsec * 1000);
+         });
+         return;
+      
       const args = message.content.slice(prefix.length).trim().split(/ +/);
       const commandName = args.shift().toLowerCase();
 
-      if (!client.commands.has(commandName)) return;
+      if (!client.commands.has(commandName)) 
+         message.reply(`No command found. Use \`\`${prefix}help\`\` for available commands`).then(msg => {
+            setTimeout(() => msg.delete(), msgsec * 1000);
+         });
+         return;
    
       if(commandName != "setchannel"){
          const { channel } = require("../config.json");
-         if(message.channel.id != channel){
+         if(message.channel.id != config.channel){
             message.reply(`Please use the correct channel`).then(msg => {
                setTimeout(() => msg.delete(), msgsec * 1000);
             });
