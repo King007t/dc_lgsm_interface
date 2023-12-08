@@ -36,7 +36,7 @@ module.exports = {
  
 		if(commandName != "setchannel") {
 			const { channel } = require("../config.json");
-			if(message.channel.id != config.channel) {
+			if(message.channel.id != channel) {
 				message.reply(`Please use the correct channel`).then(msg => {
 					setTimeout(() => msg.delete(), msgsec * 1000);
 				});
