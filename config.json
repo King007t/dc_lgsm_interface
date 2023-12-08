@@ -2,6 +2,7 @@
 	"server_name": "MyServer",
 	"serverpath": "/home/[user]/arkserver",
 	"msgsec": "5",
+	"locked": false,
 	"prefix": "!",
 	"token": "random_characters",
 	"channel":"",
