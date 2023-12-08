@@ -3,7 +3,7 @@ const fs = require('fs');
 const config = require("../config.json");
 
 module.exports = {
-	name: 'stop';
+	name: 'stop',
 	description: 'Stops the LinuxGSM server',
 	execute(message, args) {
 		config.locked = true;
