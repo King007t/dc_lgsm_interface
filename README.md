@@ -24,6 +24,7 @@ Your config file (config.json) will look something like this:
 	"server_name": "MyServer",		//name of the server
 	"serverpath": "/home/[user]/arkserver",	//path to LinuxGSM installation
 	"msgsec": "5",				//seconds a message from the bot will be displayed
+	"locked": false,			//true or false defines if bot accepts new commands
 	"prefix": "!",				//prefix for recognition of bot commands
 	"token": "random_characters",		//discord bot token to connect to		
 	"channel" :"",				//can be left blank (can be added by sending the **setchannel** command into the desired channel)
