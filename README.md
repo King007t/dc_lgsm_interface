@@ -58,6 +58,7 @@ StartLimitInterval=60s
 StartLimitBurst=3
 User=[username]
 Group=[username]
+Environment=TERM=xterm
 ExecStart=node /home/[username]/dc_lgsm_interface/
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
