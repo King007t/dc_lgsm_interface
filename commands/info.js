@@ -31,9 +31,7 @@ module.exports = {
 						ip = array[i].replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, "");
 						break;
 					}
-				}
-				ip = ip.replace(" ", "");
-				ip = ip.replace(":", ": ");
+				};
 			}
 
 			if(uptime == "none" && data.includes("Uptime:")) {
@@ -45,8 +43,6 @@ module.exports = {
 						break;
 					}
 				}
-				uptime = uptime.replace(" ", "");
-				uptime = uptime.replace(":", ": ");
 			}
 
 			if(data.includes("STOPPED") || data.includes("STARTED")) {
